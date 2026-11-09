@@ -1,0 +1,59 @@
+;; **
+;; ** Widgets config for EWW
+;; **
+
+;; ** Variables ***********************************************************************
+(defvar IMAGE "images/profile.png")
+(defvar NAME "Just Make It")
+
+;; System vars
+(defpoll HOST :interval "5s" `hostname`)
+(defpoll CPU_USAGE :interval "1s" `scripts/sys_info --cpu`)
+(defpoll MEM_USAGE :interval "1s" `scripts/sys_info --mem`)
+
+;; Zmienne czasu (odświeżane co sekundę/minutę)
+(defpoll HOUR :interval "1s" "date '+%H'")
+(defpoll MIN  :interval "1s" "date '+%M'")
+(defpoll MER  :interval "1s" "date '+%p'")
+(defpoll DAY  :interval "1m" "date '+%A'")
+
+;; ** Widgets *************************************************************************
+
+(defwidget clock [] 
+    (box :class "genwin" 
+         :orientation "v" 
+         :space-evenly false 
+         :spacing 5
+         :halign "center"
+         :valign "center"
+        (box :class "clock_time" 
+             :orientation "h" 
+             :space-evenly false 
+             :spacing 2
+             :halign "center"
+            (label :class "time_hour" :text HOUR)
+            (label :class "time_sep"  :text ":")
+            (label :class "time_min"  :text MIN))
+        (label :class "time_day" 
+               :halign "center" 
+               :text DAY)))
+
+;; ** Windows *************************************************************************
+
+(defwindow clock 
+    :monitor 0
+    :stacking "bg"
+    :exclusive false
+    :focusable false
+    :geometry (geometry :x "610px" 
+                        :y "330px" 
+                        :width "900px" 
+                        :height "400px" 
+                        :anchor "center")
+    (clock))
+
+
+
+
+
+

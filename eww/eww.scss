@@ -1,0 +1,38 @@
+/** Global *******************************************/
+*{
+    all: unset;
+	font-family: Mononoki Nerd Font;
+}
+
+/** Generic window ***********************************/
+.genwin {
+	background-color: rgb(40, 40, 40, 0.9);
+	border-radius: 30px;
+}
+
+
+
+/** Clock ********************************************/
+.time_hour, .time_min, .time_sep {
+  	color: #fffee0;
+	font-size:200px;
+	font-weight:bolder;
+	margin-left: 0px;
+}
+
+.time_hour{
+	margin-left: 100px;
+}
+.time_min{
+	margin-right: 100px;
+}
+
+
+
+
+.time_day {
+  	color: #fffcab;
+    font-size: 70px;
+    font-weight: bold;
+	margin-bottom: 20px;
+}

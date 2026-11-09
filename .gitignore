@@ -1,0 +1,26 @@
+# 1. Ignoruj wszystko domyślnie
+/*
+
+# 2. Śledź plik ignorowania
+!.gitignore
+
+# 3. Twoje wybrane konfiguracje (otwieramy folder i jego zawartość)
+!hypr/
+!hypr/**
+
+!waybar/
+!waybar/**
+
+!eww/
+!eww/**
+
+!rofi/
+!rofi/**
+
+!nwg-look/
+!nwg-look/**
+
+# 4. Wykluczenia wewnątrz dozwolonych folderów (np. logi, cache i pliki tymczasowe)
+*.log
+*.swp
+__pycache__/
