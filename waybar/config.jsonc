@@ -6,19 +6,29 @@
     "name": "main-bar",
     "output": "DP-3",
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "height":40,
     "modules-left": ["clock", "custom/music"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": [
-      "pulseaudio",
-      "tray"
+      "tray",
+      "pulseaudio#speakers",
+      "pulseaudio#microphone",
+      "custom/power",
+
     ],
+
+"pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+},
 
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "1": "",
+            "1, 11": "",
             "2": "",
             "3": "",
             "4": "",
@@ -38,12 +48,14 @@
         "sort-by": "id"
     },
 
-    "tray": {
-    "icon-size": 18,
-    "spacing": 10,
-    "show-passive-items": true,
-    "smooth-scrolling-threshold": 0.1
-    },
+"tray": {
+    "icon-size": 25,
+    "spacing": 15,
+    "orders": {
+        "blueman":98,
+        "nm-applet":99
+    }
+},
 
 
     "custom/music": {
@@ -64,8 +76,8 @@
     },
 
     "network": {
-      "format-wifi": "󰤢 {bandwidthDownBits}",
-      "format-ethernet": "󰈀 {bandwidthDownBits}",
+      "format-wifi": "󰤢 ",
+      "format-ethernet": "󰈀 ",
       "format-disconnected": "󰤠 No Network",
       "interval": 5,
       "tooltip": false,
@@ -91,18 +103,29 @@
       "exec": "sh -c '(uptime -p)'"
     },
 
-    "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-muted": "",
-      "format-icons": {
-        "default": ["", "", " "]
-      },
-      "on-click": "pavucontrol"
+"pulseaudio#speakers": {
+    "format": "{icon}",
+    "format-muted": "󰝟",
+    "format-icons": {
+        "default": [
+            "󰪞", // ~12% (1/8 obwodu okręgu)
+            "󰪟", // ~25% (1/4 obwodu)
+            "󰪠", // ~37% (3/8 obwodu)
+            "󰪡", // ~50% (połowa okręgu)
+            "󰪢", // ~62% (5/8 obwodu)
+            "󰪣", // ~75% (3/4 obwodu)
+            "󰪤", // ~87% (7/8 obwodu)
+            "󰪥"  // 100% (pełny domknięty pierścień)
+        ]
     },
+    "scroll-step": 5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
 
     "custom/power": {
       "tooltip": false,
-      "on-click": "/home/mateusz/.config/rofi/applets/bin/powermenu.sh",
+      "on-click": "/home/mateusz/.config/rofi/powermenu/type-2/powermenu.sh",
       "format": "⏻"
     },
 
@@ -146,7 +169,7 @@
     "name": "secondary-bar",
     "output": "HDMI-A-1",
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "height":40,
     "modules-left": ["custom/uptime"],
     "modules-center": ["hyprland/workspaces"],

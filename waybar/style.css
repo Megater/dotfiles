@@ -4,8 +4,7 @@
   font-size: 15px;
   font-weight: 800;
   min-height: 0;
-  padding-right: 2px;
-  padding-left: 2px;
+  padding-top: 1px;
   padding-bottom: 0px;
   color: #fffee0;
 }
@@ -15,6 +14,7 @@
 /* Główny kontener paska z marginesem i zaokrągleniem */
 #waybar {
   background: rgba(40, 40, 40, 0.9);
+  border-top: 2px solid rgba(65, 65, 65, 0.9);
   /* Margines jest niezbędny: 8px od góry, 12px po bokach */
   margin: 8px 12px 0px 12px;
 }
@@ -62,22 +62,25 @@ button {
 #backlight,
 #clock,
 #battery,
-#pulseaudio,
+#pulseaudio.speakers,
+#pulseaudio.microphone,
 #network,
 #cpu,
 #memory,
 #custom-lock,
-#custom-power,
 #custom-weather,
 #custom-uptime,
 #custom-docker {
   padding: 0rem 1rem;
   margin:0;
 }
+#network{
+  font-size: 18px;
+}
 
-#tray {
-    padding: 0 8px;
-    border-radius: 4px;
+#tray{
+  margin-right: 10px;
+
 }
 
 #tray > .passive {
@@ -90,8 +93,8 @@ button {
 }
 
 #clock {
-  border-radius: 5px;
-  font-size: 14px;
+  font-size: 18px;
+  border-bottom:3px solid #bfb900;
 }
 
 #custom-weather {
@@ -121,9 +124,21 @@ button {
   border-radius: 0;
 }
 
-#pulseaudio {
-  color: #ea999c;
-  border-radius: 5px 0px 0px 5px;
+#pulseaudio.microphone{
+  font-size: 25px;
+  border-right:3px solid #bfb900;
+  padding-right: 1rem;
+}
+
+#pulseaudio.speakers{
+  font-size: 25px;
+  border-left:3px solid #bfb900;
+  margin-right: 1rem;
+}
+
+/* Stan wyciszenia mikrofonu */
+#pulseaudio.microphone.source-muted, #pulseaudio.speakers.muted {
+    color: #bf616a;
 }
 
 #custom-docker {
@@ -142,9 +157,11 @@ button {
 }
 
 #custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 5px 5px 0px;
-  color: #e78284;
+  background: rgb(72, 37, 37);
+  padding: 0 1.2rem 0 1rem;
+  margin-left: 0.1rem;
+
+  
 }
 
 #custom-docker.docker {
