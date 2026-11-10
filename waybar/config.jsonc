@@ -27,8 +27,9 @@
 
     "hyprland/workspaces": {
         "format": "{icon}",
+        "on-click":"activate",
         "format-icons": {
-            "1, 11": "",
+            "1": "",
             "2": "",
             "3": "",
             "4": "",
@@ -178,6 +179,7 @@
     "hyprland/workspaces": {
         "all-outputs": false,
         "format": "{icon}",
+        "on-click":"activate",
         "format-icons": {
             "11": "",
             "12": "",

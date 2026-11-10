@@ -14,6 +14,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("~/.config/eww/launch.sh")
   hl.exec_cmd("nm-applet & blueman-applet")
   hl.exec_cmd("spotify --minimized")
+  hl.exec_cmd("waybar")
 
 
 

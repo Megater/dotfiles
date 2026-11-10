@@ -6,7 +6,7 @@
   min-height: 0;
   padding-top: 1px;
   padding-bottom: 0px;
-  color: #fffee0;
+  color: #d9ffd2;
 }
 
 
@@ -16,7 +16,6 @@
   background: rgba(40, 40, 40, 0.9);
   border-top: 2px solid rgba(65, 65, 65, 0.9);
   /* Margines jest niezbędny: 8px od góry, 12px po bokach */
-  margin: 8px 12px 0px 12px;
 }
 
 #workspaces {
@@ -33,26 +32,37 @@
 #workspaces button.active {
   color: white;
   border-radius: 5px;
-  background: #bfb900;
+  background: #427B58;
   padding: 0.4rem 0.64rem 0.4rem 0.4rem;
 }
 
 #workspaces button.urgent {
   color: white;
-  background: rgba(250, 125, 0, 0.417);
+  background: #bfb900;
   border-radius: 5px;
   padding: 0.2rem 0.4rem 0.2rem 0.2rem;
 
+}
+
+#workspaces button.empty {
+    opacity: 0.35;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button:not(.empty) {
+    opacity: 1.0;
 }
 
 button {
   background: transparent;
 }
 
+
+
 #workspaces button:hover {
   color: white;
   border-radius: 5px;
-  background: #bfb900;
+  background: #427B58;
   padding: 0.4rem 0.64rem 0.4rem 0.4rem;
 }
 
@@ -94,7 +104,7 @@ button {
 
 #clock {
   font-size: 18px;
-  border-bottom:3px solid #bfb900;
+  border-bottom:3px solid #427B58;
 }
 
 #custom-weather {
@@ -126,13 +136,13 @@ button {
 
 #pulseaudio.microphone{
   font-size: 25px;
-  border-right:3px solid #bfb900;
+  border-right:3px solid #427B58;
   padding-right: 1rem;
 }
 
 #pulseaudio.speakers{
   font-size: 25px;
-  border-left:3px solid #bfb900;
+  border-left:3px solid #427B58;
   margin-right: 1rem;
 }
 

@@ -10,7 +10,7 @@
     background:     rgb(40, 40, 40, 0.9);
     background-alt: #353535FF;
     foreground:     #EBDBB2FF;
-    selected:       #bfb900;
-    active:         #B8BB26FF;
+    selected:       #427B58;
+    active:         #427B58;
     urgent:         #FB4934FF;
 }
