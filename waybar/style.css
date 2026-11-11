@@ -1,46 +1,49 @@
 /* Poprawiono znak '-' na '*' */
 * {
   font-family: JetbrainsMono Nerd Font;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   min-height: 0;
-  padding-top: 1px;
   padding-bottom: 0px;
-  color: #d9ffd2;
+  color: rgb(235, 219, 178);
+
+
+
 }
 
 
 
 /* Główny kontener paska z marginesem i zaokrągleniem */
 #waybar {
-  background: rgba(40, 40, 40, 0.9);
-  border-top: 2px solid rgba(65, 65, 65, 0.9);
+  background-color: transparent;
+
+
   /* Margines jest niezbędny: 8px od góry, 12px po bokach */
 }
 
 #workspaces {
-  color: white;
-  padding: 0.2rem;
+  border-radius: 20px;
 }
 
 #workspaces button {
+  color: rgb(124, 111, 100);
   border-radius: 5px;
-  padding: 0.4rem 0.64rem 0.4rem 0.4rem;
-  margin: 0 3px 0 3px;
+  padding: 0.2rem 0.64rem 0.2rem 0.4rem;
+  margin: 1px 3.5px 1px 3.5px;
 }
 
 #workspaces button.active {
-  color: white;
-  border-radius: 5px;
-  background: #427B58;
-  padding: 0.4rem 0.64rem 0.4rem 0.4rem;
+  color: rgb(251, 241, 199);
+  border-radius: 20px;
+  background: rgb(196, 68, 45);
+  padding: 0.2rem 0.64rem 0.2rem 0.4rem;
 }
 
 #workspaces button.urgent {
-  color: white;
+  color: rgb(251, 241, 199);
   background: #bfb900;
-  border-radius: 5px;
-  padding: 0.2rem 0.4rem 0.2rem 0.2rem;
+  border-radius: 20px;
+  padding: 0.2rem 0.64rem 0.2rem 0.4rem;
 
 }
 
@@ -53,21 +56,20 @@
     opacity: 1.0;
 }
 
-button {
-  background: transparent;
-}
+
 
 
 
 #workspaces button:hover {
-  color: white;
-  border-radius: 5px;
-  background: #427B58;
-  padding: 0.4rem 0.64rem 0.4rem 0.4rem;
+  border-radius: 20px;
+  background: rgb(196, 68, 45);
+  padding: 0rem 0.64rem 0rem 0.4rem;
 }
 
+#music,
+#custom-power,
+#workspaces,
 #bluetooth,
-#custom-music,
 #tray,
 #backlight,
 #clock,
@@ -82,19 +84,47 @@ button {
 #custom-uptime,
 #custom-docker {
   padding: 0rem 1rem;
-  margin:0;
+  background: rgba(40, 40, 40, 0.85);
+  margin-bottom: 0.4rem;
+  border: 3px solid rgb(60, 56, 54);
+  
+
+
+
 }
+
+#custom-uptime{
+  border-radius: 20px;
+}
+
+#memory{
+  border-left: 0;
+  border-radius: 0px 20px 20px 0px;
+}
+
+#cpu{
+  border-left: 0;
+  border-right: 0;
+}
+
+
 #network{
-  font-size: 18px;
+  border-right: 0;
+  border-radius: 20px 0px 0px 20px;
 }
 
 #tray{
-  margin-right: 10px;
+  margin-right: 1rem;
+  border-radius: 20px;
 
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
+
+
+
+#tray > .passive,
+#tray > .active {
+  -gtk-icon-effect: dim; /* przygasza kolory ikon */
 }
 
 #tray > .needs-attention {
@@ -102,16 +132,8 @@ button {
     color: #ffffff;
 }
 
-#clock {
-  font-size: 18px;
-  border-bottom:3px solid #427B58;
-}
 
-#custom-weather {
-  color: #8caaee;
-  margin-left: 0.5rem;
-  border-radius: 5px;
-}
+
 
 #battery {
   color: #a6d189;
@@ -136,14 +158,16 @@ button {
 
 #pulseaudio.microphone{
   font-size: 25px;
-  border-right:3px solid #427B58;
-  padding-right: 1rem;
+  border-left: 0px;
+  margin-right: 1rem;
+  border-radius: 0px 20px 20px 0px;
 }
 
 #pulseaudio.speakers{
   font-size: 25px;
-  border-left:3px solid #427B58;
-  margin-right: 1rem;
+  border-right: 0;
+  border-radius: 20px 0px 0px 20px;
+
 }
 
 /* Stan wyciszenia mikrofonu */
@@ -155,21 +179,38 @@ button {
   color: #85c1dc;
 }
 
-#custom-music {
-  color: #d8ffd2;
-  border-radius: 5px;
-  margin-left: 0px;
-  background: transparent
+#music{
+  border-radius: 20px;
 }
+
+#custom-music {
+  background: transparent;
+  border: 0;
+  color: rgb(213, 196, 161);
+  margin-left: 1rem;
+}
+
+#custom-musicicon{
+  background: rgb(140, 106, 26);
+  border-color: transparent;
+  border-radius: 50%;
+  margin: 3px 0 3px 0;
+  padding: 0.2rem 0.3rem 0.2rem 0.5rem;
+  color: rgb(40, 40, 40);
+}
+
+
 
 #custom-lock {
   color: #babbf1;
 }
 
 #custom-power {
-  background: rgb(72, 37, 37);
+  color: rgb(251, 73, 52);
+  background: rgba(101, 17, 14, 0.683);
   padding: 0 1.2rem 0 1rem;
   margin-left: 0.1rem;
+  border-radius: 20px;
 
   
 }

@@ -6,7 +6,7 @@
 
 /** Generic window ***********************************/
 .genwin {
-	background-color: rgb(40, 40, 40, 0.9);
+	background-color: rgba(40, 40, 40, 0.85);
 	border-radius: 30px;
 }
 
@@ -14,7 +14,7 @@
 
 /** Clock ********************************************/
 .time_hour, .time_min, .time_sep {
-  	color: #d9ffd2;
+  	color: rgb(213, 196, 161);
 	font-size:200px;
 	font-weight:bolder;
 	margin-left: 0px;
@@ -31,7 +31,7 @@
 
 
 .time_day {
-  	color: #427B58;
+  	color: rgb(140, 106, 26);
     font-size: 70px;
     font-weight: bold;
 	margin-bottom: 20px;

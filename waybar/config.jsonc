@@ -6,15 +6,15 @@
     "name": "main-bar",
     "output": "DP-3",
     "layer": "top",
+    "width":1850,
     "position": "bottom",
-    "height":40,
-    "modules-left": ["clock", "custom/music"],
+    "modules-left": ["group/music"],  
     "modules-center": ["hyprland/workspaces"],
     "modules-right": [
       "tray",
       "pulseaudio#speakers",
       "pulseaudio#microphone",
-      "custom/power",
+      "custom/power"
 
     ],
 
@@ -58,9 +58,25 @@
     }
 },
 
+"group/music": {
+  "orientation": "horizontal",
+  "modules": [
+    "custom/musicicon",
+    "custom/music"
+  ]
+},
 
+    "custom/musicicon":{
+      "format":" ",
+      "escape": true,
+      "interval": 2,
+      "tooltip": false,
+      "exec": "playerctl metadata --format='{{ artist }} - {{ title }}' 2>/dev/null || echo 'Nic nie gra'",
+      "on-click": "playerctl play-pause || spotify &",
+      "max-length": 50
+    },
     "custom/music": {
-      "format": "  {}",
+      "format": "{}",
       "escape": true,
       "interval": 2,
       "tooltip": false,
@@ -171,7 +187,7 @@
     "output": "HDMI-A-1",
     "layer": "top",
     "position": "bottom",
-    "height":40,
+    "width":1750,
     "modules-left": ["custom/uptime"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["network","cpu","memory"],
